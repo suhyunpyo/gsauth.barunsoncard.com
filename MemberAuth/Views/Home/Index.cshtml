@@ -1,0 +1,306 @@
+﻿@{
+    ViewData["Title"] = "BarunsonGshop";
+    
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/login.css">
+	<title>BarunsonGshop - 로그인</title>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<header class="header">
+			<div class="area">
+				<h1><a href="#">barunsonGshop 로고</a></h1>
+			</div>
+		</header>
+		<!-- //header -->
+		<div class="sub_contents">
+			<!-- login -->
+			<section class="login">
+				<div class="login_box">
+					<div class="title_box">
+						<h2>로그인</h2>
+						<p class="sub_text">바른컴퍼니 통합아이디로 이용이 가능합니다.</p>
+					</div>
+					<!-- tab contents -->
+					<div class="tab_wrap type02">
+						<div class="tc_wrap">
+							<!-- 회원 로그인 영역 -->
+							<div class="tab_con">
+								<!--
+									1. <div class="form_box" login_fail 클래스 추가 시 로그인 실패 레이아웃 노출
+									2. <div class="form_box" login_fail 클래스 삭제 시 로그인 실패 레이아웃 숨김
+								-->
+								<div class="form_box">
+									<div class="inp_box">
+										<input type="text" name="USER_ID" placeholder="아이디" class="inp">
+										<input type="password" name="Password" placeholder="비밀번호" class="inp">
+									</div>
+									<!--
+										1. input id="idSave" 임시 아이디 입니다.
+										2. label for="idSave" 임시 입니다.
+										3. id 변경 시 label for="" 와 input id명 같게 해주세요.
+									-->
+									<div class="check_box">
+										<!--
+											1. 아이디 클릭 시 아이디 팝업 노출
+											2. 비밀번호 찾기 클릭 시 비밀번호 찾기 팝업 노출
+										-->
+										<span class="find_info">
+											<a href="javascript:popOpen(0);">아이디</a> /
+											<a href="javascript:popOpen(1);">비밀번호 찾기</a>
+										</span>
+									</div>
+									<!--
+										1. 처음은 숨김처리
+										2. <div class="form_box" login_fail 클래스 추가 시 로그인 실패 문구 노출
+										3. <div class="form_box" login_fail 클래스 삭제 시 로그인 실패 문구 숨김
+									-->
+									<p class="fail_text"><strong>아이디 또는 비밀번호를 확인해주세요.</strong></p>
+									<!-- //login fail text -->
+									<div class="btn_wrap type01">
+										<a href="javascript:;" class="btn type01">로그인</a>										
+										<a href="@ViewData["BarunnfamilyUrl"]Member/GshopAgreement.aspx" class="btn type01_1" target="_blank">회원가입</a>
+									</div>
+								</div>
+							</div>
+							<!-- //회원 로그인 영역 -->
+
+						</div>
+					</div>
+					<!-- //tab contents -->
+				</div>
+
+			</section>
+			<!-- //login -->
+			<!-- popup -->
+			<section class="find_pop">
+				<div class="pop_wrap">
+					<div class="layer_pop">
+						<a href="javascript:popClose();" class="popup_close">팝업창 닫기</a>
+						<div class="tab_wrap type02">
+							<!-- tab list -->
+							<ul class="tab_ul">
+								<li><a href="javascript:;">아이디 찾기</a></li>
+								<li><a href="javascript:;">비밀번호 찾기</a></li>
+							</ul>
+							<!-- //tab list -->
+							<div class="tc_wrap">
+								<!-- 아이디 찾기 영역 -->
+								<div class="tab_con id_con">
+									<div class="btn_wrap type01">
+										<a id="btnCPCLIENT1" href="javascript:;" class="btn type00">휴대폰 인증</a>
+									</div>
+									<!-- 아이디 검색결과
+										1. 임시 숨김처리
+										2. 작업 하실 때 style="display:none" 삭제하시면 노출 됩니다.
+									-->
+									<div class="find_result" style="display:none">
+										<p class="result_text">회원님께서 가입하신 아이디는 <br /> <strong>s4Guest</strong> 입니다.</p>
+										<p class="reg_date">가입일자 : <span>2021.01.14</span></p>
+										<div class="btn_wrap type01">
+											<a href="javascript:;" class="btn type01">로그인</a>
+										</div>
+									</div>
+									<!-- //아이디 검색결과 -->
+								</div>
+								<!-- //아이디 찾기 영역 -->
+								<!-- 비밀번호 찾기 -->
+								<div class="tab_con pw_con">
+									<div class="inp_box">
+										<input type="text" id="searchID" name="searchID" placeholder="아이디를 입력해주세요." class="inp">
+									</div>
+
+									<div class="btn_wrap type01">
+										<a id="btnCPCLIENT2" href="javascript:;" class="btn type00">휴대폰 인증</a>
+									</div>
+									<!-- //비밀번호 찾기 결과  -->
+								</div>
+								<!-- //비밀번호 찾기 -->
+							</div>
+						</div>
+					</div>
+					<div class="pop_mask"></div>
+				</div>
+			</section>
+			<!-- //popup -->
+
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
+	<script src="/js/common/common.js"></script>
+	<script src="/js/member/login.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".loader").hide();
+			$("#searchID").val("");
+			// $("#param_r1").val("");
+
+			window.name = "Parent_window";
+			var obj = $(".login .tab_con");  //
+
+			$("[name=USER_ID],[name=Password]").keypress(function (event) {
+				if (event.which == 13) {
+					$(obj.eq(0)).find(".btn_wrap a").click();
+					return;
+				}
+			});
+			$("[name = Name], [name = Email]").keypress(function (event) {
+				if (event.which == 13) {
+					$(obj.eq(1)).find(".btn_wrap a").click();
+					return;
+				}
+			});
+
+			//로그인  클릭
+			$(obj.eq(0)).find(".btn_wrap a:eq(0)").click(function () {
+				if ($("[name=USER_ID]").val() == "") {
+					alert("아이디를 입력하세요.");
+					($("[name=USER_ID]")).focus();
+					return;
+				}
+				if ($("[name=Password]").val() == "") {
+					alert("비밀번호를 입력하세요.");
+					($("[name=Password]")).focus();
+					return;
+				}
+				$("#Loginfrm").submit();
+				$(".loader").show();
+
+				var userid = $("[name=USER_ID]").val();
+				var password = $("[name=Password]").val();
+
+				var returnurl = "@ViewData["ReturnUrl"]";			
+
+				$.ajax({
+					url: "/api/Account/GetToken",
+					type: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					data: JSON.stringify({
+						"userid": userid,
+						"password": password
+					}),
+					success: function (result) {
+						$("[name=USER_ID]").val("");
+						$("[name=Password]").val("");
+
+						if (returnurl != "") {
+							window.location.href = returnurl + "?accessToken=" + result.accessToken;
+						}
+					},
+					error: function (result) {
+						//console.log(result);
+
+						if (result.responseText == "wrong userinfo") {
+							alert("아이디 또는 비밀번호가 일치하지 않습니다.\r\n다시 확인하신 후 입력해주세요.");
+							return;
+						}
+						alert("알수 없는 오류가 발생했습니다. \r\n" + result.responseText);
+					}
+				});
+			});
+
+			$("#btnCPCLIENT1").click(function () {
+				$("#searchID").val("");				
+				
+				if (executeCPClient() == true) {
+					document.domain = window.location.hostname;
+
+					window.open('', 'popupCPClient', 'width=500, height=461, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+					$("[name=formCPClientRequest]").attr("target", "popupCPClient");
+					$("[name=formCPClientRequest]").submit();
+				}
+			})
+
+			$("#btnCPCLIENT2").click(function () {
+				if (isEmpty($("#searchID").val())) {
+					alert("아이디를 입력해주세요");
+					return;
+				}				
+
+				if(executeCPClient()==true)
+				{
+					document.domain = window.location.hostname;
+
+					window.open('', 'popupCPClient', 'width=500, height=461, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+					$("[name=formCPClientRequest]").attr("target", "popupCPClient");
+					$("[name=formCPClientRequest]").submit();
+				}
+			})
+			
+			var executeCPClient = function () {
+
+				var rst = false;
+
+				$.ajax({
+					url: "/Home/GetNiceApiEncrypt",
+					type: "GET",
+					async: false,
+					headers: {
+						"Content-Type": "application/json"
+					},					
+					data: "authModule=CPClient",
+					success: function (result) {
+						$("[name=token_version_id]").val(result.tokenVersionId);
+						$("[name=enc_data]").val(result.encData);
+						$("[name=integrity_value]").val(result.integrityValue);						
+						rst = true;
+					},
+					error: function (result) {						
+						alert("알수 없는 오류가 발생했습니다.다시 시도해 주세요  \r\n" + result.responseText);
+						rst = false;
+					}
+				});
+				
+				return rst;
+			}
+		});
+
+		window.name = "'Parent_window";
+
+		
+
+		var isEmpty = function (val) {
+			if (val === "" || val === null || val === undefined
+				|| (val !== null && typeof val === "object" && !Object.keys(val).length)
+			) {
+				return true
+			} else {
+				return false
+			}
+
+		};
+
+	</script>
+
+	<form name="formCPClientRequest" method="post" target="popupCPClient" action="https://nice.checkplus.co.kr/CheckPlusSafeModel/service.cb">
+		<input type="hidden" name="token_version_id" value="" />
+		<input type="hidden" name="enc_data" value="">
+		<input type="hidden" name="integrity_value" value="">
+		<input type="hidden" name="param_popup_yn" value="Y">
+		<input type="hidden" name="m" value="service">		
+	</form>
+
+	<form name="formCPClientResponse" id="formCPClientResponse" method="post" action="">
+		<input type="hidden" name="TokenVersionId" />
+		<input type="hidden" name="EncData" />
+		<input type="hidden" name="IntegrityValue" />
+		<input type="hidden" name="SearchID_Result">
+	</form>
+</body>
+</html>

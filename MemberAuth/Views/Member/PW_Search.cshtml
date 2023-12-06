@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "BarunsonGshop";
+    
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/register.css">
+	<title>BarunsonGshop - 아이디찾기</title>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<header class="header">
+			<div class="area">
+				<h1><a href="#">barunsonGshop 로고</a></h1>
+			</div>
+		</header>
+		<!-- //header -->
+        <div class="sub_contents">
+            <!-- register -->
+            <section class="register">
+                <div class="register_box">
+                    <div class="title_box">
+                        <h2>비밀번호 찾기</h2>
+                    </div>
+                    <!-- 아이디/비밀번호 찾기 컨텐츠 -->
+                    <div class="register_contents">
+                        <!-- 안내 텍스트 -->
+                        <div class="register_text_wrap">
+                            <p class="find_text">
+                               @* 바른 Family 통합 사이트에서 비밀번호를 변경하세요.*@
+                            </p>
+                        </div>
+                        <!-- //안내 텍스트 -->
+                    </div>
+                    <!-- //아이디/비밀번호 찾기 컨텐츠 -->
+                    <!-- 아이디/비밀번호 찾기 하단 버튼 -->
+                    <div class="btn_wrap bottom">
+                        @if (!string.Equals(ViewData["CertID"].ToString(), "F"))
+                        {
+                            <a href="#none" id="" onclick="Profile_Modify();" class="btn type01 wp100">변경하기</a>
+                        }
+
+                        @* <a href="/" class="btn type01 wp100">변경하기</a>*@
+                        <a href="@ViewData["GSAuthUrl"]?returnUrl=https://gshop-login.addpulse.co.kr/sso/auth" class="btn type01_1 wp100 mt20">취소</a>
+                    </div>
+                    <!-- //아이디/비밀번호 찾기 하단 버튼 -->
+                </div>
+            </section>
+            <!-- //register -->
+        </div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
+	<script src="/js/common/common.js"></script>
+     <script>
+        var _CertID = "@ViewData["CertID"]";
+        
+        if (_CertID != "F") {
+            $(".find_text").append("바른 Family 통합 사이트에서 비밀번호를 변경하세요.")
+        }
+        else {
+            $(".find_text").append(" 검색 결과가 없습니다")
+        }
+
+        function Profile_Modify()
+        {
+            var port = location.protocol;
+            var hostName = location.hostname;
+            var returnUrl = encodeURIComponent(port + "//" + hostName + "/Member/login");
+
+            var popupWidth = 1200;
+            var popupHeight = 900;
+
+            var popupX = (window.screen.width / 2) - (popupWidth / 2);
+            // 만들 팝업창 width 크기의 1/2 만큼 보정값으로 빼주었음
+
+            var popupY = (window.screen.height / 2) - (popupHeight / 2);
+
+            window.name = "Parent_window";                                
+            window.open('@ViewData["BarunnfamilyUrl"]Profile-Modify?CertID=' + _CertID + '&returnUrl=gsauth.barunsoncard.com', 'UserProfileModify', 'width=1200, height=900,  left=' + popupX + ', top=' + popupY + ' scrollbars=yes');
+        }
+
+</script>
+
+	
+
+</body>
+</html>

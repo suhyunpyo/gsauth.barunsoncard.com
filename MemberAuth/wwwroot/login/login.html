@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/login.css">
+	<title>BarunsonGshop - 로그인</title>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header -->
+		<header class="header">
+			<div class="area">
+				<h1><a href="#">barunsonGshop 로고</a></h1>
+			</div>
+		</header>
+		<!-- //header -->
+		<div class="sub_contents">
+			<!-- login -->
+			<section class="login">
+				<div class="login_box">
+					<div class="title_box">
+						<h2>로그인</h2>
+						<p class="sub_text">바른컴퍼니 통합아이디로 이용이 가능합니다.</p>
+					</div>
+					<!-- tab contents -->
+					<div class="tab_wrap type02">
+						<div class="tc_wrap">
+							<!-- 회원 로그인 영역 -->
+							<div class="tab_con">
+								<!--
+									1. <div class="form_box" login_fail 클래스 추가 시 로그인 실패 레이아웃 노출
+									2. <div class="form_box" login_fail 클래스 삭제 시 로그인 실패 레이아웃 숨김
+								-->
+								<div class="form_box">
+									<div class="inp_box">
+										<input type="text" placeholder="아이디" class="inp">
+										<input type="password" placeholder="비밀번호" class="inp">
+									</div>
+									<!--
+										1. input id="idSave" 임시 아이디 입니다.
+										2. label for="idSave" 임시 입니다.
+										3. id 변경 시 label for="" 와 input id명 같게 해주세요.
+									-->
+									<div class="check_box">
+										<!--
+											1. 아이디 클릭 시 아이디 팝업 노출
+											2. 비밀번호 찾기 클릭 시 비밀번호 찾기 팝업 노출
+										-->
+										<span class="find_info">
+											<a href="javascript:popOpen(0);">아이디</a> /
+											<a href="javascript:popOpen(1);">비밀번호 찾기</a>
+										</span>
+									</div>
+									<!-- 
+										1. 처음은 숨김처리
+										2. <div class="form_box" login_fail 클래스 추가 시 로그인 실패 문구 노출
+										3. <div class="form_box" login_fail 클래스 삭제 시 로그인 실패 문구 숨김
+									-->
+									<p class="fail_text"><strong>아이디 또는 비밀번호를 확인해주세요.</strong></p>
+									<!-- //login fail text -->
+									<div class="btn_wrap type01">
+										<a href="javascript:;" class="btn type01">로그인</a>
+										<a href="javascript:;" class="btn type01_1">회원가입</a>
+									</div>	
+								</div>
+							</div>
+							<!-- //회원 로그인 영역 -->
+							
+						</div>
+					</div>
+					<!-- //tab contents -->
+				</div>
+				
+			</section>
+			<!-- //login -->
+			<!-- popup -->
+			<section class="find_pop">
+				<div class="pop_wrap">
+					<div class="layer_pop">
+						<a href="javascript:popClose();" class="popup_close">팝업창 닫기</a>
+						<div class="tab_wrap type02">
+							<!-- tab list -->
+							<ul class="tab_ul">
+								<li><a href="javascript:;">아이디 찾기</a></li>
+								<li><a href="javascript:;">비밀번호 찾기</a></li>
+							</ul>
+							<!-- //tab list -->
+							<div class="tc_wrap">
+								<!-- 아이디 찾기 영역 -->
+								<div class="tab_con id_con">
+									<div class="btn_wrap type01">
+										<a href="javascript:;" class="btn type00">휴대폰 인증</a>
+									</div>
+									<!-- 아이디 검색결과
+										1. 임시 숨김처리
+										2. 작업 하실 때 style="display:none" 삭제하시면 노출 됩니다.
+									-->
+									<div class="find_result" style="display:none">
+										<p class="result_text">회원님께서 가입하신 아이디는 <br/> <strong>s4Guest</strong> 입니다.</p>
+										<p class="reg_date">가입일자 : <span>2021.01.14</span></p>
+										<div class="btn_wrap type01">
+											<a href="javascript:;" class="btn type01">로그인</a>
+										</div>
+									</div>
+									<!-- //아이디 검색결과 -->
+								</div>
+								<!-- //아이디 찾기 영역 -->
+								<!-- 비밀번호 찾기 -->
+								<div class="tab_con pw_con">
+									<div class="inp_box">
+										<input type="text" placeholder="아이디를 입력해주세요." class="inp">
+									</div>
+									
+									<div class="btn_wrap type01">
+										<a href="javascript:;" class="btn type00">휴대폰 인증</a>
+									</div>
+									<!-- //비밀번호 찾기 결과  -->
+								</div>
+								<!-- //비밀번호 찾기 -->
+							</div>
+						</div>
+					</div>
+					<div class="pop_mask"></div>
+			</section>
+			<!-- //popup -->
+
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/login.js"></script>
+</body>
+</html>

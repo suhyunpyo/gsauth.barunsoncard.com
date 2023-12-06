@@ -1,0 +1,25 @@
+﻿@model MemberAuth.Models.NiceApiViewModel
+<html>
+       
+<body>
+    <script type='text/javascript'>
+
+        document.domain = window.location.hostname;
+        var _SearchID = window.opener.searchID.value;        
+        if (_SearchID != "") {
+            window.opener.formCPClientResponse.SearchID_Result.value = _SearchID;        
+            window.opener.formCPClientResponse.action = "/member/Member_Pw_Chk"; //비밀번호 찾기로 유입
+        }
+        else {
+            window.opener.formCPClientResponse.action = "/member/Member_Chk";
+        }
+
+        window.opener.formCPClientResponse.IntegrityValue.value = "@Model.CPCleintEncData.IntegrityValue";
+        window.opener.formCPClientResponse.EncData.value = "@Model.CPCleintEncData.EncData";
+        window.opener.formCPClientResponse.TokenVersionId.value = "@Model.CPCleintEncData.TokenVersionId";
+        window.opener.formCPClientResponse.submit();
+        window.close();
+    </script>
+</body>
+              
+</html>
